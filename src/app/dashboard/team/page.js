@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import DashboardLayout from '@/components/DashboardLayout';
+import Image from 'next/image';
 import { 
   PlusIcon, 
   PencilIcon, 
@@ -193,11 +194,13 @@ export default function TeamPage() {
             >
               {/* Member Image */}
               <div className="p-6 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200">
-                  <img
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 relative">
+                  <Image
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    layout="fill"
+                    objectFit="cover"
+                    className="w-full h-full"
                     onError={(e) => {
                       e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9Ijc1IiBjeT0iNjAiIHI9IjIwIiBmaWxsPSIjOUNBNEFGIi8+CjxwYXRoIGQ9Ik0zMCAxMjBDMzAgMTA0IDUxIDkwIDc1IDkwUzEyMCAxMDQgMTIwIDEyMFYxNTBIMzBWMTIwWiIgZmlsbD0iIzlDQTRBRiIvPgo8L3N2Zz4K';
                     }}
@@ -285,10 +288,12 @@ export default function TeamPage() {
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
                           <div className="relative">
-                            <img
+                            <Image
                               src={imagePreview}
                               alt="Preview"
-                              className="mx-auto h-32 w-32 object-cover rounded-lg"
+                              width={128}
+                              height={128}
+                              className="mx-auto object-cover rounded-lg"
                             />
                             <button
                               type="button"
@@ -456,10 +461,12 @@ export default function TeamPage() {
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
                           <div className="relative">
-                            <img
+                            <Image
                               src={imagePreview}
                               alt="Preview"
-                              className="mx-auto h-32 w-32 object-cover rounded-lg"
+                              width={128}
+                              height={128}
+                              className="mx-auto object-cover rounded-lg"
                             />
                             <button
                               type="button"
@@ -601,11 +608,13 @@ export default function TeamPage() {
                 </div>
                 
                 <div className="text-center space-y-4">
-                  <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gray-200">
-                    <img
+                  <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gray-200 relative">
+                    <Image
                       src={selectedMember.image}
                       alt={selectedMember.name}
-                      className="w-full h-full object-cover"
+                      layout="fill"
+                      objectFit="cover"
+                      className="w-full h-full"
                     />
                   </div>
                   

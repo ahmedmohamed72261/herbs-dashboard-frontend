@@ -31,7 +31,7 @@ export default function MessagesPage() {
 
   useEffect(() => {
     filterMessages(searchTerm, filterStatus);
-  }, [messages, searchTerm, filterStatus]);
+  }, [messages, searchTerm, filterStatus, filterMessages]);
 
   const fetchMessages = async () => {
     try {

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import DashboardLayout from '@/components/DashboardLayout';
+import Image from 'next/image';
 import { 
   PlusIcon, 
   PencilIcon, 
@@ -318,10 +319,12 @@ export default function ProductsPage() {
             >
               {/* Product Image */}
               <div className="aspect-video bg-gray-200 relative">
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  layout="fill"
+                  objectFit="cover"
+                  className="w-full h-full"
                   onError={(e) => {
                     e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMjUgNzVIMTc1VjEyNUgxMjVWNzVaIiBzdHJva2U9IiM5Q0E0QUYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgo8Y2lyY2xlIGN4PSIxMzciIGN5PSI4NyIgcj0iNCIgZmlsbD0iIzlDQTRBRiIvPgo8cGF0aCBkPSJNMTI1IDExMkwxMzUgMTAyTDE0NSAxMTJMMTY1IDkyTDE3NSAxMDJWMTI1SDEyNVYxMTJaIiBmaWxsPSIjOUNBNEFGIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOUNBNEFGIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPlByb2R1Y3QgSW1hZ2U8L3RleHQ+Cjwvc3ZnPgo=';
                   }}
@@ -419,10 +422,12 @@ export default function ProductsPage() {
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
                           <div className="relative">
-                            <img
+                            <Image
                               src={imagePreview}
                               alt="Preview"
-                              className="mx-auto h-32 w-32 object-cover rounded-lg"
+                              width={128}
+                              height={128}
+                              className="mx-auto object-cover rounded-lg"
                             />
                             <button
                               type="button"
@@ -570,10 +575,12 @@ export default function ProductsPage() {
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
                           <div className="relative">
-                            <img
+                            <Image
                               src={imagePreview}
                               alt="Preview"
-                              className="mx-auto h-32 w-32 object-cover rounded-lg"
+                              width={128}
+                              height={128}
+                              className="mx-auto object-cover rounded-lg"
                             />
                             <button
                               type="button"
@@ -736,11 +743,13 @@ export default function ProductsPage() {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
-                    <img
+                  <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden relative">
+                    <Image
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
-                      className="w-full h-full object-cover"
+                      layout="fill"
+                      objectFit="cover"
+                      className="w-full h-full"
                     />
                   </div>
                   

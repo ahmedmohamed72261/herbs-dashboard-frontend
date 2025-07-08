@@ -237,7 +237,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold mb-2">Welcome back, Administrator!</h1>
-              <p className="text-green-100">Here's what's happening with your herbs business today.</p>
+              <p className="text-green-100">Here&apos;s what&apos;s happening with your herbs business today.</p>
             </div>
             <div className="text-right">
               <p className="text-green-100 text-sm">Last login</p>
