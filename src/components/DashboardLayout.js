@@ -31,10 +31,10 @@ export default function DashboardLayout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 flex overflow-x-hidden">
       <Sidebar />
-      <div className="flex-1 min-h-screen">
-        <main className="p-4 lg:p-6 pt-16 lg:pt-6">
+      <div className="flex-1 min-h-screen min-w-0">
+        <main className="p-4 lg:p-6 pt-16 lg:pt-6 max-w-full overflow-x-hidden">
           {children}
         </main>
       </div>
